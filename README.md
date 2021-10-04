@@ -1,31 +1,50 @@
-<table>
+<table align='center'>
   <tr>
-    <td><img alt="ITBA_IEEE Logo" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo_oficial_itba_ieee.png" height="112px" /></td>
+    <td><img alt="ITBA_IEEE Logo" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo_oficial_itba_ieee.png?raw=true" height="112px" /></td>
     <td><img alt="Python Logo" src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg?raw=true" height="112px" /></td>
   </tr>
   </table>
   </br>
-  
-# Data Analytics with Python - ITBA - IEEE. 👨‍💻
+
+<h2 align='center'>Data Analytics with Python - ITBA - IEEE. 👨‍💻</h2>
 
 ```python
-def startLearning():
-    message = "Growing up a little more!"
-    print(message)
+def startLearning(name:str)->str:
+  """
+  This function receives a name and returns a greeting.
+  """
+  message = f"Hi {name}, i'm learning Python!"
+  return message
+
+if __name__ == "__main__":
+  print(startLearning('Guest'))
+
 ```
 
-## Technologies used. 📌
+<table align='center'>
+  <tr align='center'>
+    <h2 align='center'>Technologies used. 📌</h2>
+    <td>
+      <a href="https://www.python.org/downloads/"><img alt="Pyhton Logo" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/py_logo1_1.png?raw=true" width="50px" height="50px" /></a>
+    </td>
+    <td><center>Python</center></td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <a href="https://pandas.pydata.org/"><img alt="Pandas Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1200px-Pandas_logo.svg.png?raw=true" height="50px" /></a>
+    </td>
+    <td><center>Pandas</center></td>
+  </tr>
+</table>
 
-|<img alt="Pyhton" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/py_logo1_1.png" width="50px" height="50px" />|<a href="https://www.python.org/downloads/">Python</a>|
-|----|----|
-    
-## License 📄
-This proyect is under license [MIT License] - Read the file [LICENSE.md](LICENSE) for details
+<h2 align='center'>License 📄</h2>
 
-## Where to find me: 🌎
+<p align='center'>This proyect is under license [MIT License] - Read the file [LICENSE.md](LICENSE) for details</p>
 
-<table>
+
+<table align='center'>
   <theader>
+  <th><h2 align='center'>Where to find me: 🌎</h2></th>
     <tr align='center'>
       <td>
         <img class="circular" alt="Facu" src="https://avatars1.githubusercontent.com/u/12877139?s=400&u=d369ee24466653d9bbeeb9654930e3ff1c67b76a&v=4" width="80px" height="80px" />
