@@ -1,13 +1,12 @@
 <table>
   <tr>
-    <td><img alt="IEEE" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/ieee-cs.png" height="110px" /></td>
-    <td><img alt="ITBA" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo_oficial_itba_ieee.png" height="112px" /></td>
-    <td><img alt="Python" src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg?raw=true" height="112px" /></td>
+    <td><img alt="ITBA_IEEE Logo" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo_oficial_itba_ieee.png" height="112px" /></td>
+    <td><img alt="Python Logo" src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg?raw=true" height="112px" /></td>
   </tr>
   </table>
   </br>
   
-# Python Course - ITBA - IEEE. 👨‍💻
+# Data Analytics with Python - ITBA - IEEE. 👨‍💻
 
 ```python
 def startLearning():
