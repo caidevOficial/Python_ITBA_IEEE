@@ -1,7 +1,14 @@
 <table align='center'>
   <tr>
-    <td><img alt="ITBA_IEEE Logo" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo_oficial_itba_ieee.png?raw=true" height="112px" /></td>
-    <td><img alt="Python Logo" src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg?raw=true" height="112px" /></td>
+    <td>
+      <img alt="ITBA_IEEE Logo" src="https://github.com/caidevOficial/Logos/blob/master/Instituciones/logo_oficial_itba_ieee.png?raw=true" height="112px" />
+    </td>
+    <td>
+      <img alt="Pet ITBA Logo" src="./Media/Logo_ITBA_IEEE.png?raw=true" height="112px" />
+    </td>
+    <td>
+      <img alt="Python Logo" src="https://github.com/devicons/devicon/raw/master/icons/python/python-original.svg?raw=true" height="112px" />
+    </td>
   </tr>
   </table>
   </br>
