@@ -50,7 +50,7 @@ def copyFile(src) -> bool:
     return False
 
 if __name__ == '__main__':
-    if copyFile('Clase_01/Desafios_Integradores/Docs/Datos.xlsx'):
+    if copyFile('Clase_01/Docs/Datos.xlsx'):
         print('File copied successfully')
     else:
         print('File not found')

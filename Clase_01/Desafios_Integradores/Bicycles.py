@@ -87,7 +87,7 @@ def printStationsByTrips(df):
 
 if __name__ == "__main__":
     # Read csv file
-    df = pd.read_csv('Clase_01/Desafios_Integradores/recorridos-realizados-2021-sample.csv')
+    df = pd.read_csv('Clase_01/Docs/recorridos-realizados-2021-sample.csv')
     getPercentajeTripsNormal(df)
     medianDurationOfTrip(df)
     getAllHoursOfTrips(df)

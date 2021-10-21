@@ -38,8 +38,8 @@ def unify_data(df1, df2):
 if __name__ == "__main__":
     # Create two dataframes
     
-    df = pd.read_csv("Clase_01/Desafios_Integradores/lista1.csv")
-    df2 = pd.read_csv("Clase_01/Desafios_Integradores/lista2.csv")
+    df = pd.read_csv("Clase_01/Docs/lista1.csv")
+    df2 = pd.read_csv("Clase_01/Docs/lista2.csv")
 
     # Print the dataframes
     print('Frame 1')
