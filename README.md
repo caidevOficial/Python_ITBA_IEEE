@@ -42,6 +42,24 @@ if __name__ == "__main__":
     </td>
     <td><center>Pandas</center></td>
   </tr>
+  <tr align='center'>
+    <td>
+      <a href="https://numpy.org/"><img alt="NumPy Logo" src="https://numpy.org/images/logos/numpy.svg?raw=true" height="50px" /></a>
+    </td>
+    <td><center>Numpy</center></td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <a href="https://matplotlib.org/"><img alt="MatPlotLib Logo" src="https://matplotlib.org/_static/logo2_compressed.svg?raw=true" height="50px" /></a>
+    </td>
+    <td><center>MatPlotLib</center></td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <a href="https://code.visualstudio.com/"><img alt="VSCode Logo" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/visual-studio-code.svg?raw=true" height="50px" /></a>
+    </td>
+    <td><center>VSCode</center></td>
+  </tr>
 </table>
 
 <h2 align='center'>License 📄</h2>
