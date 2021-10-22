@@ -58,6 +58,13 @@ def printTeams(newDataFrame:DataFrame):
     df = newDataFrame.to_dict('index')
     print(newDataFrame.idxmax()['Goles Recibidos'])
 
+def printTeamsNoNaN(newDataFrame:DataFrame):
+    """
+    Prints Teams that have no NaN values.
+    """
+    df = newDataFrame.to_dict('index')
+    print(newDataFrame.dropna(subset=['Puntaje', 'Diferencia de Gol']))
+
 if __name__ == "__main__":
     teams = pd.read_excel('Clase_02/Mini_Desafios/Teams.xlsx', index_col='Equipo')
     students = pd.read_excel('Clase_02/Mini_Desafios/Students.xlsx', index_col='Apellido')
@@ -65,3 +72,4 @@ if __name__ == "__main__":
     printSpecificStudent(students)
     printPointsOfTeams(teams)
     #printTeams(teams)
+    printTeamsNoNaN(teams)
