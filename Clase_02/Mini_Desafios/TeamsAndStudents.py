@@ -51,9 +51,17 @@ def printSpecificStudent(newDataFrame:DataFrame):
     df = newDataFrame.to_dict('index')
     print(df['Lopez']['Matematica'])
 
+def printTeams(newDataFrame:DataFrame):
+    """
+    Prints the teams that have the most amount of matches.
+    """
+    df = newDataFrame.to_dict('index')
+    print(newDataFrame.idxmax()['Goles Recibidos'])
+
 if __name__ == "__main__":
-    teams = pd.read_excel('Mini_Desafios/Teams.xlsx', index_col='Equipo')
-    students = pd.read_excel('Mini_Desafios/Students.xlsx', index_col='Apellido')
+    teams = pd.read_excel('Clase_02/Mini_Desafios/Teams.xlsx', index_col='Equipo')
+    students = pd.read_excel('Clase_02/Mini_Desafios/Students.xlsx', index_col='Apellido')
     printTeamsFixedErrors(teams)
     printSpecificStudent(students)
     printPointsOfTeams(teams)
+    #printTeams(teams)
