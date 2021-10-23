@@ -67,9 +67,10 @@ def printTeamsNoNaN(newDataFrame:DataFrame):
 
 if __name__ == "__main__":
     teams = pd.read_excel('Clase_02/Mini_Desafios/Teams.xlsx', index_col='Equipo')
+    teamsNaN = pd.read_excel('Clase_02/Mini_Desafios/TeamsNaN.xlsx', index_col='Equipo')
     students = pd.read_excel('Clase_02/Mini_Desafios/Students.xlsx', index_col='Apellido')
     printTeamsFixedErrors(teams)
     printSpecificStudent(students)
     printPointsOfTeams(teams)
     #printTeams(teams)
-    printTeamsNoNaN(teams)
+    printTeamsNoNaN(teamsNaN)
