@@ -67,6 +67,6 @@ def graphicGooAMZActions(dfG, dfA):
     plt.show()
 
 if __name__ == "__main__":
-    dfG = pd.read_csv('Clase_02/Mini_Desafios/GOOGLE.csv')
-    dfA = pd.read_csv('Clase_02/Mini_Desafios/AMZN.csv')
+    dfG = pd.read_csv('Clase_02/Docs/GOOGLE.csv')
+    dfA = pd.read_csv('Clase_02/Docs/AMZN.csv')
     graphicGooAMZActions(dfG, dfA)

@@ -52,6 +52,6 @@ if __name__ == "__main__":
     plt.xlabel('X Axis')
     plt.ylabel('Y Axis')
     plt.title('Gaussian Function for range [-5, 5]')
-    plt.savefig('GaussianFunction.png', dpi=300)
+    plt.savefig('Clase_02/Docs/GaussianFunction.png', dpi=300)
     plt.show()
 

@@ -60,4 +60,4 @@ def graphicValueOfBitcoin(path:str):
     plt.show()
 
 if __name__ == "__main__":
-    graphicValueOfBitcoin('Clase_02/Mini_Desafios/BTC.csv')
+    graphicValueOfBitcoin('Clase_02/Docs/BTC.csv')

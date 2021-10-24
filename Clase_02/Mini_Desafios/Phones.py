@@ -49,4 +49,4 @@ def graphicPhonePrices(path:str):
     plt.show()
 
 if __name__ == '__main__':
-    graphicPhonePrices('Clase_02/Mini_Desafios/Phones.xlsx')
+    graphicPhonePrices('Clase_02/Docs/Phones.xlsx')
