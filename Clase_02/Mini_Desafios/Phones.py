@@ -28,30 +28,25 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 
-def gaussianFunction(x, mu, sigma):
-    """[summary]
-    Calculates the value of the gaussian function in the point x.
-    Args:
-        x (array): [Vector of x values]
-        mu (int): [Mean of the gaussian function]
-        sigma (int): [Standard deviation of the gaussian function]
-    Returns:
-        [float]: [Value of the gaussian function]
+def graphicPhonePrices(path:str):
     """
-    return np.exp(-(x - mu)**2 / (2 * sigma**2))
-
-if __name__ == "__main__":
-    # Generate a normal distribution with mean 0 and standard deviation 1
-    mu, sigma = 0, 1
-    x = np.linspace(-5, 5, 100)
-    y = gaussianFunction(x, mu, sigma)
-
-    # Graficamos
-    plt.plot(x, y, 'b--')
-    plt.xlabel('X Axis')
-    plt.ylabel('Y Axis')
-    plt.title('Gaussian Function for range [-5, 5]')
-    plt.savefig('GaussianFunction.png', dpi=300)
+    This function is used to plot the graphic of the phone prices as a percentage of the total price.
+    """
+    df = pd.read_excel(path)
+    print(df['Price'].value_counts(normalize=True, ascending=True))
+    phoneExpensive = df.loc[df['Price'] == df['Price'].max()]
+    phoneCheap = df.loc[df['Price'] == df['Price'].min()]
+    
+    plt.figure(figsize=(16, 8))
+    plt.tight_layout()
+    plt.pie(df['Price'].to_list(), labels=df['Model'].to_list(), autopct='%1.1f%%', shadow=True, startangle=90)
+    plt.plot(phoneExpensive['Model'], phoneExpensive['Price'], 'y*', label='Expensive Phone')
+    plt.plot(phoneCheap['Model'], phoneCheap['Price'], 'm*', label='Cheaper Phone')
+    plt.title('Phones Model Prices')
+    plt.legend(loc='best')
     plt.show()
 
+if __name__ == '__main__':
+    graphicPhonePrices('Clase_02/Mini_Desafios/Phones.xlsx')
