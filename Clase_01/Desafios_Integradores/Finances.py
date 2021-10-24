@@ -44,8 +44,8 @@ def updateTransactions(users, transactions) -> DataFrame:
 
 if __name__ == "__main__":
     # Read the data
-    users_file = pd.read_excel("Clase_01/Desafios_Integradores/Finanzas.xlsx", "Usuarios", index_col="Usuario")
-    transactions_file = pd.read_excel("Clase_01/Desafios_Integradores/Finanzas.xlsx", "Transferencias")
+    users_file = pd.read_excel("Clase_01/Docs/Finanzas.xlsx", "Usuarios", index_col="Usuario")
+    transactions_file = pd.read_excel("Clase_01/Docs/Finanzas.xlsx", "Transferencias")
 
     users = users_file.to_dict('index')
     transactions = transactions_file.to_dict('records')
