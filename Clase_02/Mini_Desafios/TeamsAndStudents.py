@@ -29,6 +29,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from pandas.core.frame import DataFrame
+import numpy as np
 
 def printPointsOfTeams(newDataFrame:DataFrame):
     """
@@ -65,12 +66,31 @@ def printTeamsNoNaN(newDataFrame:DataFrame):
     df = newDataFrame.to_dict('index')
     print(newDataFrame.dropna(subset=['Puntaje', 'Diferencia de Gol']))
 
+def printApprovedStudents(newDataFrame:DataFrame):
+    """
+    Prints the students that have a score greater than or equal to 70.
+    """
+    df = newDataFrame
+    print(df['Nombre'].value_counts().idxmax())
+    df2 = df[(df['P1']>=6) & (df['P2']>=6) & (df['TP']>=6)]
+    print(df2)
+
+def testMatrix():
+    table = np.array([[4, 6, 5], [8, 8, 8], [5, 7, 8]])
+    df = pd.DataFrame(table, columns=['Matematica', 'Fisica', 'Quimica'])
+
+    df2 = pd.DataFrame(df, columns=['Quimica', 'Matematica'])
+    df2.to_excel('Clase_02/Mini_Desafios/aluTest.xlsx')
+
 if __name__ == "__main__":
     teams = pd.read_excel('Clase_02/Mini_Desafios/Teams.xlsx', index_col='Equipo')
     teamsNaN = pd.read_excel('Clase_02/Mini_Desafios/TeamsNaN.xlsx', index_col='Equipo')
     students = pd.read_excel('Clase_02/Mini_Desafios/Students.xlsx', index_col='Apellido')
+    students2 = pd.read_excel('Clase_02/Mini_Desafios/Students2.xlsx', index_col='Legajo')
     printTeamsFixedErrors(teams)
     printSpecificStudent(students)
     printPointsOfTeams(teams)
     #printTeams(teams)
     printTeamsNoNaN(teamsNaN)
+    printApprovedStudents(students2)
+    testMatrix()
