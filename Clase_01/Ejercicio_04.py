@@ -33,7 +33,7 @@ link = 'https://covid.ourworldindata.org/data/ecdc/full_data.csv'
 # m.myWget(link)
 
 # Reads a csv, then converts it to a dataframe
-df = pd.read_csv('Clase_01/full_data.csv')
+df = pd.read_csv('Clase_01/Docs/full_data.csv')
 
 # config pandas
 pd.set_option('display.max_columns', 10)

@@ -28,7 +28,7 @@
 
 import pandas as pd
 
-de = pd.read_excel('Clase_01/Datos.xlsx')
+de = pd.read_excel('Clase_01/Docs/Datos.xlsx')
 
 # You can filter the dataframe by using the where method of the dataframe
 # The where method takes a function as an argument

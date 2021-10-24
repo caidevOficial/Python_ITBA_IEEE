@@ -29,7 +29,7 @@
 import pandas as pd
 from MyWget import myWget as m
 file = 'https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/Datos.xlsx'
-df = pd.read_excel('Clase_01/Datos.xlsx')
+df = pd.read_excel('Clase_01/Docs/Datos.xlsx')
 # prints the first 5 rows of the dataframe
 print(f'{df}\n\n')
 
