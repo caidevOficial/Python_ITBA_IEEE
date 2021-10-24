@@ -35,5 +35,5 @@ def averageOfMath(df):
     return df[df['Matematica']>5]['Matematica'].mean()
 
 if __name__ == "__main__":
-    df = pd.read_excel("Clase_01/Datos.xlsx")
+    df = pd.read_excel("Clase_01/Docs/Datos.xlsx")
     print(f"Average of students that have Math approved: {averageOfMath(df)}")

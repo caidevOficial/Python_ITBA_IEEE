@@ -65,7 +65,7 @@ def varianceOfTotalRooms(df)->None:
     print(f"- Variacion de habitaciones por casa: {round(df['median_house_value'].var(), 2)}")
 
 if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Desafios_Integradores/california_housing_train.xlsx')
+    df = pd.read_excel('Clase_01/Docs/california_housing_train.xlsx')
     df_Filtered = howManyWithMedianHouseValue(df)
     averageOfTotalRooms(df_Filtered)
     mostValueHouse(df)

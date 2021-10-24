@@ -47,7 +47,7 @@ def printTeamsFixedErrors(newDataFrame:DataFrame):
     print(newDataFrame['Error'].mask(errors, 'Si'))
 
 def printSpecificStudent(newDataFrame:DataFrame):
-    #newDataFrame = pd.read_excel('Mini_Desafios/alu.xlsx', index_col='Apellido')
+    #newDataFrame = pd.read_excel('Docs/alu.xlsx', index_col='Apellido')
     print(newDataFrame)
     df = newDataFrame.to_dict('index')
     print(df['Lopez']['Matematica'])
@@ -80,13 +80,13 @@ def testMatrix():
     df = pd.DataFrame(table, columns=['Matematica', 'Fisica', 'Quimica'])
 
     df2 = pd.DataFrame(df, columns=['Quimica', 'Matematica'])
-    df2.to_excel('Clase_02/Mini_Desafios/aluTest.xlsx')
+    df2.to_excel('Clase_02/Docs/aluTest.xlsx')
 
 if __name__ == "__main__":
-    teams = pd.read_excel('Clase_02/Mini_Desafios/Teams.xlsx', index_col='Equipo')
-    teamsNaN = pd.read_excel('Clase_02/Mini_Desafios/TeamsNaN.xlsx', index_col='Equipo')
-    students = pd.read_excel('Clase_02/Mini_Desafios/Students.xlsx', index_col='Apellido')
-    students2 = pd.read_excel('Clase_02/Mini_Desafios/Students2.xlsx', index_col='Legajo')
+    teams = pd.read_excel('Clase_02/Docs/Teams.xlsx', index_col='Equipo')
+    teamsNaN = pd.read_excel('Clase_02/Docs/TeamsNaN.xlsx', index_col='Equipo')
+    students = pd.read_excel('Clase_02/Docs/Students.xlsx', index_col='Apellido')
+    students2 = pd.read_excel('Clase_02/Docs/Students2.xlsx', index_col='Legajo')
     printTeamsFixedErrors(teams)
     printSpecificStudent(students)
     printPointsOfTeams(teams)

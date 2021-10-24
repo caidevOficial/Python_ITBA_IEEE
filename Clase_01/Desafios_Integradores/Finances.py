@@ -1,4 +1,4 @@
-#*
+#
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -29,20 +29,32 @@
 import pandas as pd
 from pandas.core.frame import DataFrame
 
-
-
-def findDifference(df:DataFrame)->DataFrame:
+def updateTransactions(users, transactions) -> DataFrame:
     """
-    Calculates the difference between the goals scored by the home team and the away team.
-    Then it adds the difference to the goals scored by the home team as a new column into the dataframe.
+    Updates the values of the transactions of the users.
     """
-    df['Difference'] = df['Goles a favor'] - df['Goles en contra']
-    return df
+    for transaction in transactions:
+        em = transaction['Emisor']
+        rec = transaction['Receptor']
+        amount = transaction['Monto']
+        users[em]['Presupuesto'] -= amount
+        users[rec]['Presupuesto'] += amount
+
+    return pd.DataFrame.from_dict(users, orient='index')
 
 if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
+    # Read the data
+    users_file = pd.read_excel("Clase_01/Docs/Finanzas.xlsx", "Usuarios", index_col="Usuario")
+    transactions_file = pd.read_excel("Clase_01/Docs/Finanzas.xlsx", "Transferencias")
 
-    print('Original Table:')
-    print(df)
-    print('\nNew Table:')
-    print(findDifference(df))
+    users = users_file.to_dict('index')
+    transactions = transactions_file.to_dict('records')
+
+    print('Original DF Users: ')
+    print(users_file)
+    print('Original DF Transactions: ')
+    print(transactions_file)
+
+    print('Modified DF: ')
+    print(updateTransactions(users, transactions))
+

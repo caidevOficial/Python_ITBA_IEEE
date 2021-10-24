@@ -1,4 +1,4 @@
-#*
+#
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,23 +26,45 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import pandas as pd
-from pandas.core.frame import DataFrame
+import matplotlib.pyplot as plt
+import numpy as np
 
+# We create our vector
+x = np.linspace(0, 3*3.14, 100)
+# Then, we create our functions to be plotted
+y1 = np.sin(x)
+y2 = np.cos(x)
 
+# Set the size of our plot
+plt.figure(figsize=(10, 5))
 
-def findDifference(df:DataFrame)->DataFrame:
-    """
-    Calculates the difference between the goals scored by the home team and the away team.
-    Then it adds the difference to the goals scored by the home team as a new column into the dataframe.
-    """
-    df['Difference'] = df['Goles a favor'] - df['Goles en contra']
-    return df
+# sets the first column to show the first function
+plt.subplot(1, 2, 1)
+# Then the title of the plot
+plt.title("Sin(x)")
+# Then, we plot the function
+plt.plot(x, y1, 'b.')
+# Then we set the label of the 'X' axis & 'Y' axis
+plt.xlabel("X Axis")
+plt.ylabel("Y Axis")
 
-if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
+plt.subplot(1, 2, 2)
+plt.title("Cos(x)")
+plt.plot(x, y2, 'rh')
+plt.xlabel("X Axis")
+plt.ylabel("Y Axis")
 
-    print('Original Table:')
-    print(df)
-    print('\nNew Table:')
-    print(findDifference(df))
+# We can setup the limits of the axis 'X' and 'Y' like:
+# min_x, max_x, min_y, max_y
+plt.axis([-1, 6, -1, 1])
+
+# Also we can activate the grid like:
+plt.grid(True)
+# Remember that we need to activate one grid for each subplot
+
+# We can adjust the padding between the plots
+plt.tight_layout()
+
+# Finally, we show the plot
+plt.show()
+

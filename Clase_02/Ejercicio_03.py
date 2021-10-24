@@ -1,4 +1,4 @@
-#*
+#
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,23 +26,33 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import pandas as pd
-from pandas.core.frame import DataFrame
+import matplotlib.pyplot as plt
+import numpy as np
 
+# We can create our coordenates vector that represent the 'X'
+# of two ways to plot our graph
+# First param: the initial number of our domain
+# Second param: the final number of our domain
+# Third param: the step of our domain
+t1 = np.arange(0, 1.1, 0.1)
 
+# First param: the integer part of the number to show
+# Second param: the decimal part of the number to show
+# Third param: the amount of numbers that we want to create
+t2 = np.linspace(0, 1, 11)
 
-def findDifference(df:DataFrame)->DataFrame:
-    """
-    Calculates the difference between the goals scored by the home team and the away team.
-    Then it adds the difference to the goals scored by the home team as a new column into the dataframe.
-    """
-    df['Difference'] = df['Goles a favor'] - df['Goles en contra']
-    return df
+print("t1: ", t1)
+print("t2: ", t2)
 
-if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
+# For 'X' we choose values separated by 't1' (0.1 step)
+x = [0.0, 0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1.0]
 
-    print('Original Table:')
-    print(df)
-    print('\nNew Table:')
-    print(findDifference(df))
+# The values of 'Y' are 'X' squared
+y = [0.0, 0.01, 0.04, 0.09, 0.16, 0.25, 0.36, 0.49, 0.64, 0.81, 1.0]
+
+print(x)
+print(y)
+
+plt.plot(x, y)
+plt.plot(t1, t1)
+plt.show()

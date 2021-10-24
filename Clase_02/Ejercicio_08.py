@@ -1,4 +1,4 @@
-#*
+#
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,23 +26,32 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import pandas as pd
-from pandas.core.frame import DataFrame
+import matplotlib.pyplot as plt
+import numpy as np
 
-
-
-def findDifference(df:DataFrame)->DataFrame:
+def graphicPieChart():
     """
-    Calculates the difference between the goals scored by the home team and the away team.
-    Then it adds the difference to the goals scored by the home team as a new column into the dataframe.
+    This function shows a graphic of a pie chart.
     """
-    df['Difference'] = df['Goles a favor'] - df['Goles en contra']
-    return df
+    # Create a list of the slices that will be used to create the pie chart.
+    slices = [150,300,250,325]
+    # Create a list of the labels of each portion of the pie chart.
+    labels = ['C', 'C#', 'Java', 'Python']
+    # Create a list of colors to be used for each portion of the pie chart.
+    colors = ['blue', 'purple', 'red', 'lightblue']
+    # Create a pie chart
+    plt.pie(slices, labels=labels, colors=colors,
+            startangle=130, shadow=True, explode=(0,0,0,0.1),
+            autopct='%1.1f%%')
+    
+    # Draw a circle at the center of the pie to make it look like a donut
+    #centre_circle = plt.Circle((0,0),0.7,color='white')
+    
+    fig = plt.gcf()
+    #fig.gca().add_artist(centre_circle)
+    
+    # Show the pie chart
+    plt.show()
 
 if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
-
-    print('Original Table:')
-    print(df)
-    print('\nNew Table:')
-    print(findDifference(df))
+    graphicPieChart()

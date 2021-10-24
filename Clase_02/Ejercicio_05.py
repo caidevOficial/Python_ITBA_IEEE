@@ -1,4 +1,4 @@
-#*
+#
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,23 +26,30 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import pandas as pd
-from pandas.core.frame import DataFrame
+import matplotlib.pyplot as plt
+import numpy as np
 
+# We create our vector
+x = np.linspace(0, 3*3.14, 100)
+# Then, we create our functions to be plotted
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.tan(x)
 
+# Then, we set the labels of our functions
+plt.plot(x, y1, 'b-', label='sin(x)')
+plt.plot(x, y2, 'r-', label='cos(x)')
+plt.plot(x, y3, 'g-', label='tan(x)')
+# And set the labels as a legend
+plt.legend()
 
-def findDifference(df:DataFrame)->DataFrame:
-    """
-    Calculates the difference between the goals scored by the home team and the away team.
-    Then it adds the difference to the goals scored by the home team as a new column into the dataframe.
-    """
-    df['Difference'] = df['Goles a favor'] - df['Goles en contra']
-    return df
+# Set the labels of the axis & the title of the graph
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+plt.title('Functions Sin, Cos & Tan of [x]')
 
-if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
+# We can adjust the padding between the plots
+plt.tight_layout()
 
-    print('Original Table:')
-    print(df)
-    print('\nNew Table:')
-    print(findDifference(df))
+# Finally, we show the plot
+plt.show()

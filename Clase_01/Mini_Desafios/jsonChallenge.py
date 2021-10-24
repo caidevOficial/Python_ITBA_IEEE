@@ -47,7 +47,7 @@ def validateMailAndPass(file:Series, email:str, passw:str) -> None:
 
 if __name__ == "__main__":
 
-    jsonFile = pd.read_json('Clase_01/Mini_Desafios/jsonChallenge.json')
+    jsonFile = pd.read_json('Clase_01/Docs/jsonChallenge.json')
     email = input('Ingrese su email: ')
     passw = input('Ingrese su contraseña: ')
     validateMailAndPass(jsonFile, email, passw)

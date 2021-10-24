@@ -1,4 +1,4 @@
-#*
+#
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,23 +26,18 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import pandas as pd
-from pandas.core.frame import DataFrame
+import matplotlib.pyplot as plt
+import numpy as np
 
+# Amount of points
+amount = 10
+# Sets the X axis points
+x = np.linspace(0, 1, amount)
+print(x)
+# Sets the Y axis points aplying the function sin to each point of 'x'
+y = np.sin(2*np.pi*x)
+print(y)
 
-
-def findDifference(df:DataFrame)->DataFrame:
-    """
-    Calculates the difference between the goals scored by the home team and the away team.
-    Then it adds the difference to the goals scored by the home team as a new column into the dataframe.
-    """
-    df['Difference'] = df['Goles a favor'] - df['Goles en contra']
-    return df
-
-if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
-
-    print('Original Table:')
-    print(df)
-    print('\nNew Table:')
-    print(findDifference(df))
+# Plots the points
+plt.plot(x, y)
+plt.show()

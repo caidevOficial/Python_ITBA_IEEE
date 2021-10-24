@@ -1,4 +1,4 @@
-#*
+#
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -27,22 +27,24 @@
 # @author Facundo Falcone <CaidevOficial> 
 
 import pandas as pd
-from pandas.core.frame import DataFrame
 
-
-
-def findDifference(df:DataFrame)->DataFrame:
+def unify_data(df1, df2):
     """
-    Calculates the difference between the goals scored by the home team and the away team.
-    Then it adds the difference to the goals scored by the home team as a new column into the dataframe.
+    Unify dataframes with the same columns and return a new dataframe with the unified data like an outer join.
     """
-    df['Difference'] = df['Goles a favor'] - df['Goles en contra']
-    return df
+    df_new = df1.merge(df2, how='outer').fillna('-')
+    return df_new
 
 if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
+    # Create two dataframes
+    
+    df = pd.read_csv("Clase_01/Docs/lista1.csv")
+    df2 = pd.read_csv("Clase_01/Docs/lista2.csv")
 
-    print('Original Table:')
+    # Print the dataframes
+    print('Frame 1')
     print(df)
-    print('\nNew Table:')
-    print(findDifference(df))
+    print('Frame 2')
+    print(df2)
+    print('Frame 3 Unified')
+    print(unify_data(df, df2))
