@@ -40,7 +40,7 @@ def findDifference(df:DataFrame)->DataFrame:
     return df
 
 if __name__ == "__main__":
-    df = pd.read_excel('Clase_01/Mini_Desafios/Soccer.xlsx')
+    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
 
     print('Original Table:')
     print(df)

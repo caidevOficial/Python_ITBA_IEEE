@@ -44,7 +44,7 @@ def findLoserTeam(df):
 
 if __name__ == "__main__":
     # Read the data
-    df = pd.read_excel('Clase_01/Mini_Desafios/Soccer.xlsx')
+    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
     # Updates the goals difference
     df = fd(df)
 

@@ -39,7 +39,7 @@ def calculateAverageOfSpecifyIndex(df, index:int)->None:
 
 if __name__ == "__main__":
     # Create a dataframe
-    df = pd.read_excel('Clase_01/Datos.xlsx')
+    df = pd.read_excel('Clase_01/Docs/Datos.xlsx')
     index = int(input("Enter the index: "))
     # Print the average of the first row
     calculateAverageOfSpecifyIndex(df, index)
