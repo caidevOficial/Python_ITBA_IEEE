@@ -26,22 +26,38 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
-def calculateSin(number:int) -> float:
+def graphicValueOfBitcoin(path:str):
+    """[summary]
+    Opens the file, reads the data regarding Bitcoin's values and plots it.
+    Args:
+        path (str): [The path of the file to be read]
     """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+    # Import data
+    df = pd.read_csv(path, sep=',', encoding='utf-8')
+    
+    # Get the max value of the bitcoin
+    maxValue = df['High'].max()
+    # Get the date of the max value
+    dateOfMaxValue = df['Date'][df['High'] == maxValue].values[0]
+    # Get the index of the max value
+    indexHighPrice = df['Date'].values.tolist().index(dateOfMaxValue)
+    message = f'The maximum value of Bitcoin was: {round(maxValue,3)} in {dateOfMaxValue}'
+    
+    plt.plot(df['Date'], df['High'], 'g--', label='High')
+    plt.plot(df['Date'], df['Low'], 'r--', label='Low')
+    plt.plot(df['Date'], df['Close'], 'b--', label='Close')
+    plt.plot(indexHighPrice, maxValue, 'mo', label=f'Max Value ${maxValue}')
+    plt.xlabel('Date')
+    plt.ylabel('Value')
+    plt.title(message)
+    plt.tight_layout()
+    plt.legend()
+    print(f'The maximum value of Bitcoin was: {round(maxValue,3)} in {dateOfMaxValue}')
+    plt.show()
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
-
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+if __name__ == "__main__":
+    graphicValueOfBitcoin('Clase_02/Docs/BTC.csv')

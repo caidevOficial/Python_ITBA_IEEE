@@ -26,22 +26,45 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
 
-def calculateSin(number:int) -> float:
-    """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+# We create our vector
+x = np.linspace(0, 3*3.14, 100)
+# Then, we create our functions to be plotted
+y1 = np.sin(x)
+y2 = np.cos(x)
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+# Set the size of our plot
+plt.figure(figsize=(10, 5))
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+# sets the first column to show the first function
+plt.subplot(1, 2, 1)
+# Then the title of the plot
+plt.title("Sin(x)")
+# Then, we plot the function
+plt.plot(x, y1, 'b.')
+# Then we set the label of the 'X' axis & 'Y' axis
+plt.xlabel("X Axis")
+plt.ylabel("Y Axis")
+
+plt.subplot(1, 2, 2)
+plt.title("Cos(x)")
+plt.plot(x, y2, 'rh')
+plt.xlabel("X Axis")
+plt.ylabel("Y Axis")
+
+# We can setup the limits of the axis 'X' and 'Y' like:
+# min_x, max_x, min_y, max_y
+plt.axis([-1, 6, -1, 1])
+
+# Also we can activate the grid like:
+plt.grid(True)
+# Remember that we need to activate one grid for each subplot
+
+# We can adjust the padding between the plots
+plt.tight_layout()
+
+# Finally, we show the plot
+plt.show()
+

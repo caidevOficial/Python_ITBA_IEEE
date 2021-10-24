@@ -1,4 +1,4 @@
-#
+#*
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,22 +26,29 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import pandas as pd
+from pandas.core.series import Series
 
-def calculateSin(number:int) -> float:
+def validateMailAndPass(file:Series, email:str, passw:str) -> None:
     """
-    Calculate the sinnus of a number
+    Validates if the mail and password are correct, and if the index of
+    the mail is the same as the password.
     """
-    return m.sin(number)
+    if email in jsonFile['usuarios'].values:
+        if passw in jsonFile['contra'].values:
+            if list(jsonFile['usuarios']).index(email) == list(jsonFile['contra']).index(passw):
+                print('OK')
+            else:
+                print('NO')
+        else:
+            print('Contraseña incorrecta')
+    else:
+        print('DNE')
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+if __name__ == "__main__":
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+    jsonFile = pd.read_json('Clase_01/Docs/jsonChallenge.json')
+    email = input('Ingrese su email: ')
+    passw = input('Ingrese su contraseña: ')
+    validateMailAndPass(jsonFile, email, passw)
+    

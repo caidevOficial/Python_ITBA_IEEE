@@ -13,6 +13,13 @@
   </table>
   </br>
 
+
+![](https://hit.yhype.me/github/profile?user_id=12877139)
+
+<p align="center">
+    <img src="https://komarev.com/ghpvc/?username=caidevoficial&label=Profile%20views&color=0e75b6&style=plastic" alt="caidevoficial" />
+</p>
+
 <h2 align='center'>Data Analytics with Python - ITBA - IEEE. 👨‍💻</h2>
 
 ```python
@@ -41,6 +48,24 @@ if __name__ == "__main__":
       <a href="https://pandas.pydata.org/"><img alt="Pandas Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1200px-Pandas_logo.svg.png?raw=true" height="50px" /></a>
     </td>
     <td><center>Pandas</center></td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <a href="https://numpy.org/"><img alt="NumPy Logo" src="https://numpy.org/images/logos/numpy.svg?raw=true" height="50px" /></a>
+    </td>
+    <td><center>Numpy</center></td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <a href="https://matplotlib.org/"><img alt="MatPlotLib Logo" src="https://matplotlib.org/_static/logo2_compressed.svg?raw=true" height="50px" /></a>
+    </td>
+    <td><center>MatPlotLib</center></td>
+  </tr>
+  <tr align='center'>
+    <td>
+      <a href="https://code.visualstudio.com/"><img alt="VSCode Logo" src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/visual-studio-code.svg?raw=true" height="50px" /></a>
+    </td>
+    <td><center>VSCode</center></td>
   </tr>
 </table>
 

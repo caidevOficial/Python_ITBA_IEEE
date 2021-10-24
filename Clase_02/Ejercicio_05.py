@@ -26,22 +26,30 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
 
-def calculateSin(number:int) -> float:
-    """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+# We create our vector
+x = np.linspace(0, 3*3.14, 100)
+# Then, we create our functions to be plotted
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.tan(x)
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+# Then, we set the labels of our functions
+plt.plot(x, y1, 'b-', label='sin(x)')
+plt.plot(x, y2, 'r-', label='cos(x)')
+plt.plot(x, y3, 'g-', label='tan(x)')
+# And set the labels as a legend
+plt.legend()
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+# Set the labels of the axis & the title of the graph
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+plt.title('Functions Sin, Cos & Tan of [x]')
+
+# We can adjust the padding between the plots
+plt.tight_layout()
+
+# Finally, we show the plot
+plt.show()

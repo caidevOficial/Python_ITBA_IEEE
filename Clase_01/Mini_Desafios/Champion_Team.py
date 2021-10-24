@@ -1,4 +1,4 @@
-#
+#*
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,22 +26,36 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import pandas as pd
+from pandas.core.frame import DataFrame
+from Soccer_Team import findDifference as fd
 
-def calculateSin(number:int) -> float:
+def findChampionTeam(df):
     """
-    Calculate the sinnus of a number
+    Find the champion of the team.
     """
-    return m.sin(number)
+    return df.loc[df['Puntos'] == df['Puntos'].max()]
 
-def calculateCos(number:int) -> float:
+def findLoserTeam(df):
     """
-    Calculate the cos of a number
+    Find the loser team.
     """
-    return m.cos(number)
+    return df.loc[df['Puntos'] == df['Puntos'].min()]
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+if __name__ == "__main__":
+    # Read the data
+    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
+    # Updates the goals difference
+    df = fd(df)
+
+    # Find the champion
+    champion = findChampionTeam(df)
+    # Print the result
+    print('Champion:')
+    print(champion)
+    
+    # Find the loser
+    loser = findLoserTeam(df)
+    # Print the result
+    print('Loser:')
+    print(loser)

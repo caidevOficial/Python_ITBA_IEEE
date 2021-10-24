@@ -26,22 +26,32 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
 
-def calculateSin(number:int) -> float:
+def gaussianFunction(x, mu, sigma):
+    """[summary]
+    Calculates the value of the gaussian function in the point x.
+    Args:
+        x (array): [Vector of x values]
+        mu (int): [Mean of the gaussian function]
+        sigma (int): [Standard deviation of the gaussian function]
+    Returns:
+        [float]: [Value of the gaussian function]
     """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+    return np.exp(-(x - mu)**2 / (2 * sigma**2))
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+if __name__ == "__main__":
+    # Generate a normal distribution with mean 0 and standard deviation 1
+    mu, sigma = 0, 1
+    x = np.linspace(-5, 5, 100)
+    y = gaussianFunction(x, mu, sigma)
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+    # Graficamos
+    plt.plot(x, y, 'b--')
+    plt.xlabel('X Axis')
+    plt.ylabel('Y Axis')
+    plt.title('Gaussian Function for range [-5, 5]')
+    plt.savefig('Clase_02/Docs/GaussianFunction.png', dpi=300)
+    plt.show()
+

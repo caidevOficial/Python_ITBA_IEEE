@@ -29,4 +29,9 @@ if __name__ == '__main__':
     californianHousing = 'https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/california_housing_train.xlsx'
     bicycles = 'https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/recorridos-realizados-2021-sample.csv'
     finances = 'https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/Finanzas.xlsx'
-    myWget(finances)
+    bitcoin = 'https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/BTC.csv'
+    googleActions = 'https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/GOOGLE.csv'
+    amazonActions = 'https://raw.githubusercontent.com/IEEESBITBA/Curso-Python/master/Curso_Analisis_de_Datos_Datos/AMZN.csv'
+
+    myWget(googleActions)
+    myWget(amazonActions)

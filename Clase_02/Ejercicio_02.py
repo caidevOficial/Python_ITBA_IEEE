@@ -26,22 +26,18 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
 
-def calculateSin(number:int) -> float:
-    """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+# Amount of points
+amount = 10
+# Sets the X axis points
+x = np.linspace(0, 1, amount)
+print(x)
+# Sets the Y axis points aplying the function sin to each point of 'x'
+y = np.sin(2*np.pi*x)
+print(y)
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
-
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+# Plots the points
+plt.plot(x, y)
+plt.show()

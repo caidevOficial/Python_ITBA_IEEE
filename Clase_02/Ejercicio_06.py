@@ -26,22 +26,42 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
 
-def calculateSin(number:int) -> float:
-    """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+# We create our vector
+x = np.linspace(0, 3*3.14, 100)
+# Then, we create our functions to be plotted
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.tan(x)
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+# Now we're gonna' use subplot, that receives the number of rows and columns and the number of the subplot
+# Then, we set the first row of the subplot to show the graph 'Sin(x)'
+plt.subplot(3, 1, 1)
+plt.plot(x, y1, 'b-', label='sin(x)')
+plt.legend()
+plt.title('Sin of [x]')
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+# Then, we set the second row of the subplot to show the graph 'Cos(x)'
+plt.subplot(3, 1, 2)
+plt.plot(x, y2, 'r-', label='cos(x)')
+plt.legend()
+plt.title('Cos of [x]')
+
+# Then, we set the third row of the subplot to show the graph 'Tan(x)'
+plt.subplot(3, 1, 3)
+plt.plot(x, y3, 'g-', label='tan(x)')
+# And set the labels as a legend
+plt.legend()
+plt.title('Tan of [x]')
+
+# Set the labels of the axis & the title of the graph
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+
+# We can adjust the padding between the plots
+plt.tight_layout()
+
+# Finally, we show the plot
+plt.show()

@@ -1,4 +1,4 @@
-#
+#*
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,22 +26,14 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import pandas as pd
 
-def calculateSin(number:int) -> float:
+def averageOfMath(df):
     """
-    Calculate the sinnus of a number
+    Calculate the average of the math scores that are 6 to 10.
     """
-    return m.sin(number)
+    return df[df['Matematica']>5]['Matematica'].mean()
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
-
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+if __name__ == "__main__":
+    df = pd.read_excel("Clase_01/Docs/Datos.xlsx")
+    print(f"Average of students that have Math approved: {averageOfMath(df)}")

@@ -26,22 +26,33 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
 
-def calculateSin(number:int) -> float:
-    """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+# We can create our coordenates vector that represent the 'X'
+# of two ways to plot our graph
+# First param: the initial number of our domain
+# Second param: the final number of our domain
+# Third param: the step of our domain
+t1 = np.arange(0, 1.1, 0.1)
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+# First param: the integer part of the number to show
+# Second param: the decimal part of the number to show
+# Third param: the amount of numbers that we want to create
+t2 = np.linspace(0, 1, 11)
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+print("t1: ", t1)
+print("t2: ", t2)
+
+# For 'X' we choose values separated by 't1' (0.1 step)
+x = [0.0, 0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.8,  0.9,  1.0]
+
+# The values of 'Y' are 'X' squared
+y = [0.0, 0.01, 0.04, 0.09, 0.16, 0.25, 0.36, 0.49, 0.64, 0.81, 1.0]
+
+print(x)
+print(y)
+
+plt.plot(x, y)
+plt.plot(t1, t1)
+plt.show()

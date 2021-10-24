@@ -1,4 +1,4 @@
-#
+#*
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,22 +26,22 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import pandas as pd
+import random as rd
 
-def calculateSin(number:int) -> float:
-    """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+listRandomNumbers = [rd.randint(0, 100) for i in range(10)]
 
-def calculateCos(number:int) -> float:
+def printAverageOfNumbers(listNumbers)->float:
+    """[summary]
+    Calculate the average of a list of numbers
+    
+    Args:
+        listNumbers (list): [The list of numbers to calculate the average]
+    Returns:
+        float: [The average of the list]
     """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+    average = sum(listNumbers) / len(listNumbers)
+    print(f"La media es: {average}")
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+if __name__ == "__main__":
+    printAverageOfNumbers(listRandomNumbers)

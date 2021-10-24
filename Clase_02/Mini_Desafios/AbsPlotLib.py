@@ -26,22 +26,27 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
 
-def calculateSin(number:int) -> float:
+def graphic_line(first, to, x_label, y_label, title):
     """
-    Calculate the sinnus of a number
+    Function that graphic an ABS function.
+    :param first: First point of the function.
+    :param to: Last point of the function.
+    :param x_label: Label of the X axis.
+    :param y_label: Label of the Y axis.
+    :param title: Title of the graphic.
+    :return: Graphic of the ABS function.
     """
-    return m.sin(number)
+    interval = np.arange(first, to, 0.1)
+    yAxis = np.abs(interval)
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+    plt.plot(interval, yAxis)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.title(title)
+    plt.show()
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+if __name__ == "__main__":
+    graphic_line(-3, 3, "X Axis", "Y Axis", "Abs of 3")

@@ -26,22 +26,20 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import pandas as pd
 
-def calculateSin(number:int) -> float:
-    """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
+de = pd.read_excel('Clase_01/Docs/Datos.xlsx')
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
+# You can filter the dataframe by using the where method of the dataframe
+# The where method takes a function as an argument
+# The function must return a boolean value
+# The where method returns a new dataframe
+de = de.where(de['Nombre'] == 'Sol')
+print('Condition: Nombre = Sol')
+print('Dataframe with only the condition visible, and the others values as NaN:')
+print(de)
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+# You can also filter the dataframe by deleting the fields that have a NaN value
+de = de[de['Nombre'].notna()]
+print('Dataframe with only the condition visible, without the rows that have a NaN as a value in "Nombre":')
+print(de)

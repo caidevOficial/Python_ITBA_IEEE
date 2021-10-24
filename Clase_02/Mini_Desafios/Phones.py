@@ -26,22 +26,27 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
-def calculateSin(number:int) -> float:
+def graphicPhonePrices(path:str):
     """
-    Calculate the sinnus of a number
+    This function is used to plot the graphic of the phone prices as a percentage of the total price.
     """
-    return m.sin(number)
+    df = pd.read_excel(path)
+    print(df['Price'].value_counts(normalize=True, ascending=True))
+    phoneExpensive = df.loc[df['Price'] == df['Price'].max()]
+    phoneCheap = df.loc[df['Price'] == df['Price'].min()]
+    
+    plt.figure(figsize=(16, 8))
+    plt.tight_layout()
+    plt.pie(df['Price'].to_list(), labels=df['Model'].to_list(), autopct='%1.1f%%', shadow=True, startangle=90)
+    plt.plot(phoneExpensive['Model'], phoneExpensive['Price'], 'y*', label='Expensive Phone')
+    plt.plot(phoneCheap['Model'], phoneCheap['Price'], 'm*', label='Cheaper Phone')
+    plt.title('Phones Model Prices')
+    plt.legend(loc='best')
+    plt.show()
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
-
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+if __name__ == '__main__':
+    graphicPhonePrices('Clase_02/Docs/Phones.xlsx')

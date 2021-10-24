@@ -26,22 +26,32 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import matplotlib.pyplot as plt
+import numpy as np
 
-def calculateSin(number:int) -> float:
+def graphicPieChart():
     """
-    Calculate the sinnus of a number
+    This function shows a graphic of a pie chart.
     """
-    return m.sin(number)
+    # Create a list of the slices that will be used to create the pie chart.
+    slices = [150,300,250,325]
+    # Create a list of the labels of each portion of the pie chart.
+    labels = ['C', 'C#', 'Java', 'Python']
+    # Create a list of colors to be used for each portion of the pie chart.
+    colors = ['blue', 'purple', 'red', 'lightblue']
+    # Create a pie chart
+    plt.pie(slices, labels=labels, colors=colors,
+            startangle=130, shadow=True, explode=(0,0,0,0.1),
+            autopct='%1.1f%%')
+    
+    # Draw a circle at the center of the pie to make it look like a donut
+    #centre_circle = plt.Circle((0,0),0.7,color='white')
+    
+    fig = plt.gcf()
+    #fig.gca().add_artist(centre_circle)
+    
+    # Show the pie chart
+    plt.show()
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
-
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+if __name__ == "__main__":
+    graphicPieChart()

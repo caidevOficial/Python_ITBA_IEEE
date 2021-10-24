@@ -1,4 +1,4 @@
-#
+#*
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,22 +26,20 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import pandas as pd
 
-def calculateSin(number:int) -> float:
+def calculateAverageOfSpecifyIndex(df, index:int)->None:
     """
-    Calculate the sinnus of a number
+    Calculate the average of the specified index of the dataframe
     """
-    return m.sin(number)
+    newDf = df.loc[index]
+    sumCalifications = newDf['Matematica'] + newDf['Fisica'] + newDf['Quimica']
+    print(f"El promedio de la calificacion de {newDf['Nombre']} es: {round(sumCalifications/3, 2)}")
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
 
-def calculateTan(number:int) -> float:
-    """
-    Calculate the tan of a number
-    """
-    return m.tan(number)
+if __name__ == "__main__":
+    # Create a dataframe
+    df = pd.read_excel('Clase_01/Docs/Datos.xlsx')
+    index = int(input("Enter the index: "))
+    # Print the average of the first row
+    calculateAverageOfSpecifyIndex(df, index)

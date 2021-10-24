@@ -1,4 +1,4 @@
-#
+#*
 # MIT License
 #
 # Copyright (C) 2021 <FacuFalcone - CaidevOficial>
@@ -26,22 +26,23 @@
 #
 # @author Facundo Falcone <CaidevOficial> 
 
-import math as m
+import pandas as pd
+from pandas.core.frame import DataFrame
 
-def calculateSin(number:int) -> float:
-    """
-    Calculate the sinnus of a number
-    """
-    return m.sin(number)
 
-def calculateCos(number:int) -> float:
-    """
-    Calculate the cos of a number
-    """
-    return m.cos(number)
 
-def calculateTan(number:int) -> float:
+def findDifference(df:DataFrame)->DataFrame:
     """
-    Calculate the tan of a number
+    Calculates the difference between the goals scored by the home team and the away team.
+    Then it adds the difference to the goals scored by the home team as a new column into the dataframe.
     """
-    return m.tan(number)
+    df['Difference'] = df['Goles a favor'] - df['Goles en contra']
+    return df
+
+if __name__ == "__main__":
+    df = pd.read_excel('Clase_01/Docs/Soccer.xlsx')
+
+    print('Original Table:')
+    print(df)
+    print('\nNew Table:')
+    print(findDifference(df))
