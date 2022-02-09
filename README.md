@@ -51,7 +51,7 @@ if __name__ == "__main__":
   </tr>
   <tr align='center'>
     <td>
-      <a href="https://numpy.org/"><img alt="NumPy Logo" src="https://caidevoficial.github.io/Resume/media/icons/numpy/numpy_logo.svg?raw=true" height="50px" /></a>
+      <a href="https://numpy.org/"><img alt="NumPy Logo" src="https://caidevoficial.github.io/FF_Resume/media/icons/numpy/numpy_logo.svg?raw=true" height="50px" /></a>
     </td>
     <td><center>Numpy</center></td>
   </tr>
